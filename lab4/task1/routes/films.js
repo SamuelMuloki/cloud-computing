@@ -13,4 +13,20 @@ router.get('/', verifyToken, async (req, res) => {
     }
 })
 
+router.post('/', verifyToken, async (req, res) => {
+    const filmData = new Film({
+        film_name: req.body.film_name,
+        film_type: req.body.film_type,
+        film_year: req.body.film_year,
+        film_link: req.body.film_link
+    })
+
+    try {
+        const savedFilm = await filmData.save()
+        res.send(savedFilm)
+    } catch (err) {
+        res.status(400).send({ message: err })
+    }
+})
+
 module.exports = router
