@@ -1,0 +1,22 @@
+{
+  "name": "task1",
+  "version": "1.0.0",
+  "description": "Task 1 from Lab 3 MSC Advanced computing - Cloud computing class",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "samuelMuloki",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.2",
+    "nodemon": "^3.1.7"
+  }
+}
