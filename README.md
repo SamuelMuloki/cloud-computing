@@ -36,7 +36,7 @@ docker pull ghcr.io/your-username/your-repo-name:latest
 ### Run your Docker container
 
 ```bash
-docker run -d -p 3000:3000 ghcr.io/your-username/your-repo-name:latest
+docker run -e DB_CONNECTOR='mongodb+srv://<username>:<password>@cluster0.55555.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' -e TOKEN_SECRET='your-token-secret' -d -p 3000:3000 ghcr.io/your-username/your-repo-name:latest
 ```
 
 ### Create a script on your VM
@@ -52,7 +52,7 @@ docker stop my-app-container || true
 docker rm my-app-container || true
 
 # Run the new container
-docker run -d --name my-app-container -p 3000:3000 ghcr.io/your-username/your-repo-name:latest
+docker run -e DB_CONNECTOR='mongodb+srv://<username>:<password>@cluster0.55555.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' -e TOKEN_SECRET='your-token-secret' -d --name my-app-container -p 3000:3000 ghcr.io/your-username/your-repo-name:latest
 ```
 
 ```bash
