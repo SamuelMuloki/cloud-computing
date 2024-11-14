@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-computing-service
+  labels:
+    app: cloud-computing
+spec:
+  type: loadBalancer
+  selector:
+    app: cloud-computing
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  sessionAffinity: None

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-computing-deployment
+  labels:
+    app: cloud-computing
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cloud-computing
+  template:
+    metadata:
+      labels:
+        app: cloud-computing
+    spec:
+      containers:
+        - name: cloud-computing
+          image: ghcr.io/samuelMuloki/cloud-computing:main
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
