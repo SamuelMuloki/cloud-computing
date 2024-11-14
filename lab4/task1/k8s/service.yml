@@ -5,7 +5,7 @@ metadata:
   labels:
     app: cloud-computing
 spec:
-  type: loadBalancer
+  type: LoadBalancer
   selector:
     app: cloud-computing
   ports:

@@ -20,5 +20,16 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
+          env:
+            - name: DB_CONNECTOR
+              valueFrom:
+                secretKeyRef:
+                  name: db-connector
+                  key: db-connector
+            - name: TOKEN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: token-secret
+                  key: token-secret
       imagePullSecrets:
         - name: dockerconfigjson-github-com
